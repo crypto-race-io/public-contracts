@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.1",
+    "@truffle/hdwallet-provider": "^2.0.0",
+    "dotenv": "^10.0.0",
+    "truffle": "^5.4.25",
+    "truffle-contract-size": "^2.0.1"
+  },
+  "scripts": {
+    "migrate": "truffle migrate --reset --network development",
+    "compile": "truffle compile",
+    "size": "truffle run contract-size",
+    "solgraph": "solgraph"
+  }
+}
