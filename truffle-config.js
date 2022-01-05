@@ -2,8 +2,10 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 const path = require("path");
 require("dotenv").config();
 
-const bscPrivKey = process.env.BSC_PRIV_KEY.replace(/1/g, "_"); // to prevent accidental deploys;
+const bscPrivKey = process.env.BSC_PRIV_KEY; // .replace(/1/g, "_"); // to prevent accidental deploys;
 const ganachePrivKey = process.env.GANACHE_PRIV_KEY;
+
+// 0.2027
 
 module.exports = {
   networks: {
@@ -19,7 +21,7 @@ module.exports = {
       skipDryRun: true
     },
     bsc: {
-      provider: () => new HDWalletProvider(bscPrivKey, `https://bsc-dataseed1.binance.org`),
+      provider: () => new HDWalletProvider(bscPrivKey, `wss://bsc-ws-node.nariox.org:443`),
       network_id: 56,
       confirmations: 10,
       timeoutBlocks: 200,
@@ -30,7 +32,7 @@ module.exports = {
     'truffle-contract-size'
   ],
   contracts_directory: path.resolve('./contracts/'),
-  contracts_build_directory: path.resolve('../webpage/src/app/blockchain/abis'),
+  contracts_build_directory: path.resolve('./abis'),
   compilers: {
     solc: {
       version: "0.8.10", 

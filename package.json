@@ -10,6 +10,7 @@
     "migrate": "truffle migrate --reset --network development",
     "compile": "truffle compile",
     "size": "truffle run contract-size",
-    "solgraph": "solgraph"
+    "solgraph": "solgraph",
+    "deploy-main": "truffle migrate --network bsc"
   }
 }
